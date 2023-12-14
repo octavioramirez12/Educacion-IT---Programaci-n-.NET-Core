@@ -1,4 +1,4 @@
-namespace Educacion_IT___Programación_.NET.Models
+namespace Educacion_IT___Programación_.NET.ViewModels
 {
     public class ErrorViewModel
     {

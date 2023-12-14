@@ -8,6 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Productos\Partial\" />
+    <Folder Include="Views\Roles\Partial\" />
+    <Folder Include="Views\Usuarios\Partial\" />
     <Folder Include="wwwroot\css\Inicio\" />
     <Folder Include="wwwroot\css\Productos\" />
     <Folder Include="wwwroot\css\Roles\" />
