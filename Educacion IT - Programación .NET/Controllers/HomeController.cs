@@ -1,4 +1,4 @@
-﻿using Educacion_IT___Programación_.NET.Models;
+﻿using Educacion_IT___Programación_.NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 

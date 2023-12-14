@@ -31,3 +31,12 @@ CREATE TABLE Productos
 	Activo bit NOT NULL,
 	PRIMARY KEY (Id)
 )
+
+INSERT INTO Roles (Nombre, Activo)
+VALUES ('Usuario', 1)
+
+INSERT INTO Productos (Descripcion, Precio, Stock, Imagen, Activo)
+VALUES ('Buzo', 100, 100, 'asdas', 1)
+
+INSERT INTO Usuarios (Nombre, Apellido, Fecha_Nacimiento, Clave, Mail, Id_Rol, Activo)
+VALUES ('Octavio', 'Ramirez', '05-14-2000', '1234', 'octavio.ramirez.3980@gmail.com', 1, 1)
