@@ -7,6 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Educacion IT - Programació
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{685BC21C-C8DC-4E3F-A45C-0A7C20C1A309}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "Data\Data.csproj", "{DB6AA52C-E9FF-4471-80D5-064DF12AC30E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{685BC21C-C8DC-4E3F-A45C-0A7C20C1A309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{685BC21C-C8DC-4E3F-A45C-0A7C20C1A309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{685BC21C-C8DC-4E3F-A45C-0A7C20C1A309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{685BC21C-C8DC-4E3F-A45C-0A7C20C1A309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB6AA52C-E9FF-4471-80D5-064DF12AC30E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB6AA52C-E9FF-4471-80D5-064DF12AC30E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB6AA52C-E9FF-4471-80D5-064DF12AC30E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB6AA52C-E9FF-4471-80D5-064DF12AC30E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
