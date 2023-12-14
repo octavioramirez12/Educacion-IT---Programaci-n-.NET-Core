@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33403.182
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Educacion IT - Programación .NET", "Educacion IT - Programación .NET\Educacion IT - Programación .NET.csproj", "{F75AFCA8-4A4B-457B-80C6-247C4C5B2EAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Educacion IT - Programación .NET", "Educacion IT - Programación .NET\Educacion IT - Programación .NET.csproj", "{F75AFCA8-4A4B-457B-80C6-247C4C5B2EAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F75AFCA8-4A4B-457B-80C6-247C4C5B2EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F75AFCA8-4A4B-457B-80C6-247C4C5B2EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F75AFCA8-4A4B-457B-80C6-247C4C5B2EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4B108D-4FCB-46CC-BECC-91E1F442C20A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
