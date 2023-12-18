@@ -31,5 +31,12 @@ namespace Api.Services
             var result = await _manager.Guardar(model, model.Id);
             return await _manager.BuscarListaAsync();
         }
+
+        public async Task<List<Usuarios>> EliminarUsuarioAsync(Usuarios model)
+        {
+            model.Activo = false;
+            var result = await _manager.Eliminar(model);
+            return await _manager.BuscarListaAsync();
+        }
     }
 }

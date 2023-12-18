@@ -23,5 +23,14 @@ namespace Api.Controllers
             var service = new UsuariosService();
             return await service.GuardarUsuarioAsync(model);
         }
+        [HttpPost]
+        [Route("EliminarUsuario")]
+        public async Task<List<Usuarios>> EliminarUsuario(Usuarios model)
+        {
+            var service = new UsuariosService();
+            return await service.EliminarUsuarioAsync(model);
+        }
+
+
     }
 }

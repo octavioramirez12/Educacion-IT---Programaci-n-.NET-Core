@@ -34,5 +34,13 @@ namespace Educacion_IT___Programación_.NET.Controllers
 
             return RedirectToAction("Usuarios", "Usuarios");
         }
+        public async Task<IActionResult> EliminarUsuario([FromBody]Usuarios usuario)
+        {
+            var baseApi = new BaseApi(_httpClient);
+            var usuarios = await baseApi.PostToApi("Usuarios/EliminarUsuario", usuario);
+
+            return RedirectToAction("Usuarios", "Usuarios");
+        }
+
     }
 }
