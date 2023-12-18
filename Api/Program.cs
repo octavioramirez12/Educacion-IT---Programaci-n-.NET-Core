@@ -1,6 +1,15 @@
 using Data;
 
+var Origin = "";
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(opt =>
+{
+    opt.AddPolicy(name: Origin, policy =>
+    {
+        policy.WithOrigins("*").AllowAnyMethod().AllowAnyHeader();
+    });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -21,6 +30,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors(Origin);
 
 app.MapControllers();
 

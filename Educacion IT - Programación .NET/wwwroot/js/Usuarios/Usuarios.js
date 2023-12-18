@@ -1,16 +1,18 @@
 ﻿$(document).ready(function () {
     $('#usuarios').DataTable({
         ajax: {
-            url: 'https://localhost:7126/api/usuarios/buscarUsuarios'
+            url: 'https://localhost:7126/api/usuarios/buscarUsuarios',
+            dataSrc: ''
         },
         columns: [
             { data: 'id', title: 'Id' },
             { data: 'nombre', title: 'Nombre' },
             { data: 'apellido', title: 'Apellido' },
             { data: 'fecha_Nacimiento', title: 'Fecha de Nacimiento' },
+            { data: 'clave', title: 'Clave' },
             { data: 'mail', title: 'Mail' },
             { data: 'id_Rol', title: 'Rol' },
-            { data: 'active', title: 'Activo' },
+            { data: 'activo', title: 'Activo' },
             { data: 'codigo', title: 'Código' },
         ],
         language:
