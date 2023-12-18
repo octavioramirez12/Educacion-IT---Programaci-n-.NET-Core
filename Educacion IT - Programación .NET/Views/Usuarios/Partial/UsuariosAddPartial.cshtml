@@ -7,6 +7,19 @@
                 <h5 class="modal-title">Alta y/o modificación de usuarios</h5>
             </div>
             <div class="modal-body">
+                @using (Html.BeginForm("GuardarUsuario", "Usuarios", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Nombre</label>
+                            @Html.EditorFor(usuario => usuario.Nombre, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Apellido</label>
+                            @Html.EditorFor(usuario => usuario.Apellido, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
