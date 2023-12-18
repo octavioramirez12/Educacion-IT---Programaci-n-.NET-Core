@@ -8,5 +8,10 @@ namespace Educacion_IT___Programación_.NET.Controllers
         {
             return View();
         }
+        public IActionResult UsuariosAddPartial()
+        {
+            return PartialView("~/Views/Usuarios/Partial/UsuariosAddPartial.cshtml");
+        }
+
     }
 }

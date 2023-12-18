@@ -30,3 +30,16 @@
     });
 });
 
+function GuardarUsuario() {
+    $.ajax({
+        type: "POST",
+        url: "/Usuarios/UsuariosAddPartial",
+        data: "",
+        contentType: "html",
+        success: function (resultado) {
+            $('#usuariosAddPartial').html(resultado);
+            $('#usuariosModal').modal('show');
+        }
+    })
+}
+
