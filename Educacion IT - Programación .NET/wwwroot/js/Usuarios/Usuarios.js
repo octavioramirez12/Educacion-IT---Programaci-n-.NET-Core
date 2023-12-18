@@ -67,16 +67,50 @@ function EditarUsuario(row) {
 }
 
 function EliminarUsuario(row) {
-    $.ajax({
-        type: "POST",
-        url: "/Usuarios/EliminarUsuario",
-        data: JSON.stringify(row),
-        contentType: "application/json",
-        dataType: "html",
-        success: function (resultado) {
-            tablaUsuarios.ajax.reload();
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-danger"
+        },
+        buttonsStyling: false
+    });
+    swalWithBootstrapButtons.fire({
+        title: "Estas seguro?",
+        text: "Vas a eliminar al usuario!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Si, eliminar!",
+        cancelButtonText: "No, cancelar!",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+
+            $.ajax({
+                type: "POST",
+                url: "/Usuarios/EliminarUsuario",
+                data: JSON.stringify(row),
+                contentType: "application/json",
+                dataType: "html",
+                success: function () {
+                    tablaUsuarios.ajax.reload();
+                    swalWithBootstrapButtons.fire({
+                        title: "Eliminado!",
+                        text: "El usuario ha sido eliminado.",
+                        icon: "success"
+                    });
+                }
+            })
+        } else if (
+            result.dismiss === Swal.DismissReason.cancel
+        ) {
+            swalWithBootstrapButtons.fire({
+                title: "Cancelado",
+                text: "No se ha eliminado ningún usuario",
+                icon: "error"
+            });
         }
-    })
+    });
+    
 }
 
 
