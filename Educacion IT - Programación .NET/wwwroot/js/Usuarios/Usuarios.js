@@ -8,11 +8,19 @@
             { data: 'id', title: 'Id' },
             { data: 'nombre', title: 'Nombre' },
             { data: 'apellido', title: 'Apellido' },
-            { data: 'fecha_Nacimiento', title: 'Fecha de Nacimiento' },
+            {
+                data: function (row) {
+                    return moment(row.fecha_Nacimiento).format("DD/MM/YYYY");
+                }, title: 'Fecha de Nacimiento'
+            },
             { data: 'clave', title: 'Clave' },
             { data: 'mail', title: 'Mail' },
             { data: 'id_Rol', title: 'Rol' },
-            { data: 'activo', title: 'Activo' },
+            {
+                data: function (row) {
+                    return row.activo ? "Si" : "No"
+                }, title: 'Activo'
+            },
             { data: 'codigo', title: 'Código' },
         ],
         language:
