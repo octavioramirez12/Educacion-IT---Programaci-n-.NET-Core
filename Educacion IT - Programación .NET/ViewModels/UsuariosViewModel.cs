@@ -10,6 +10,6 @@
         public string Mail { get; set; }
         public int Id_Rol { get; set; }
         public bool Activo { get; set; }
-        public int Codigo { get; set; }
+        public int? Codigo { get; set; }
     }
 }
