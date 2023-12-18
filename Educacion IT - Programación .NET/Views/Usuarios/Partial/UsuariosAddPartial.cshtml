@@ -9,6 +9,7 @@
             <div class="modal-body">
                 @using (Html.BeginForm("GuardarUsuario", "Usuarios", FormMethod.Post))
                 {
+                    @Html.HiddenFor(usuario => usuario.Id)
                     <div class="row">
                         <div class="col-md-6 mt-1 mb-3">
                             <label class="col-md-6 form-control-label">Nombre</label>

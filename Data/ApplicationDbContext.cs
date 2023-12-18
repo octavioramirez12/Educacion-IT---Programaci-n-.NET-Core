@@ -16,6 +16,7 @@ namespace Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
             optionsBuilder.UseSqlServer(ConnectionString);
         }
 
