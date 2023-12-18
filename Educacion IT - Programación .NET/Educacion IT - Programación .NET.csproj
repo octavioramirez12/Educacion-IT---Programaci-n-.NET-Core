@@ -13,7 +13,6 @@
     <Folder Include="wwwroot\css\Inicio\" />
     <Folder Include="wwwroot\css\Productos\" />
     <Folder Include="wwwroot\css\Roles\" />
-    <Folder Include="wwwroot\css\Usuarios\" />
     <Folder Include="wwwroot\js\Utils\" />
     <Folder Include="wwwroot\js\Roles\" />
     <Folder Include="wwwroot\js\Productos\" />
