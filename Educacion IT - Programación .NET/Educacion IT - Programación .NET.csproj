@@ -9,12 +9,9 @@
 
   <ItemGroup>
     <Folder Include="Views\Productos\Partial\" />
-    <Folder Include="Views\Roles\Partial\" />
     <Folder Include="wwwroot\css\Inicio\" />
     <Folder Include="wwwroot\css\Productos\" />
-    <Folder Include="wwwroot\css\Roles\" />
     <Folder Include="wwwroot\js\Utils\" />
-    <Folder Include="wwwroot\js\Roles\" />
     <Folder Include="wwwroot\js\Productos\" />
     <Folder Include="wwwroot\js\Inicio\" />
   </ItemGroup>
