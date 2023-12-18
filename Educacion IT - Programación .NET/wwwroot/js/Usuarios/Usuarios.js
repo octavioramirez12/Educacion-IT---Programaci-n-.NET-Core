@@ -42,10 +42,37 @@ function GuardarUsuario() {
         type: "POST",
         url: "/Usuarios/UsuariosAddPartial",
         data: "",
-        contentType: "html",
+        contentType: "application/json",
+        dataType: "html",
         success: function (resultado) {
             $('#usuariosAddPartial').html(resultado);
             $('#usuariosModal').modal('show');
+        }
+    })
+}
+
+function EditarUsuario(row) {
+    $.ajax({
+        type: "POST",
+        url: "/Usuarios/UsuariosAddPartial",
+        data: JSON.stringify(row),
+        contentType: "application/json",
+        dataType: "html",
+        success: function (resultado) {
+            $('#usuariosAddPartial').html(resultado);
+            $('#usuariosModal').modal('show');
+        }
+    })
+}
+
+function EliminarUsuario(row) {
+    $.ajax({
+        type: "POST",
+        url: "/Usuarios/EliminarUsuario",
+        data: JSON.stringify(row),
+        contentType: "application/json",
+        dataType: "html",
+        success: function (resultado) {
         }
     })
 }
