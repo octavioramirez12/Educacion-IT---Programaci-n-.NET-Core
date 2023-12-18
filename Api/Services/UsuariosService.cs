@@ -25,5 +25,11 @@ namespace Api.Services
                 return null;
             }
         }
+
+        public async Task<List<Usuarios>> GuardarUsuarioAsync(Usuarios model)
+        {
+            var result = await _manager.Guardar(model, model.Id);
+            return await _manager.BuscarListaAsync();
+        }
     }
 }
