@@ -20,4 +20,8 @@
     <Folder Include="wwwroot\js\Inicio\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj" />
+  </ItemGroup>
+
 </Project>
