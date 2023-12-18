@@ -1,5 +1,6 @@
 ﻿using Data.Base;
 using Data.Entities;
+using Educacion_IT___Programación_.NET.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Educacion_IT___Programación_.NET.Controllers
@@ -16,9 +17,14 @@ namespace Educacion_IT___Programación_.NET.Controllers
         {
             return View();
         }
-        public IActionResult UsuariosAddPartial()
+        public IActionResult UsuariosAddPartial([FromBody]Usuarios usuario)
         {
-            return PartialView("~/Views/Usuarios/Partial/UsuariosAddPartial.cshtml");
+            var usuarioViewModel = new UsuariosViewModel();
+            if(usuario != null)
+            {
+                usuarioViewModel = usuario;
+            }
+            return PartialView("~/Views/Usuarios/Partial/UsuariosAddPartial.cshtml", usuarioViewModel);
         }
 
         public async Task<IActionResult> GuardarUsuario(Usuarios usuario)
