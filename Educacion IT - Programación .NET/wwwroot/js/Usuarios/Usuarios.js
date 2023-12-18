@@ -1,5 +1,6 @@
-﻿$(document).ready(function () {
-    $('#usuarios').DataTable({
+﻿var tablaUsuarios;
+$(document).ready(function () {
+    tablaUsuarios = $('#usuarios').DataTable({
         ajax: {
             url: 'https://localhost:7126/api/usuarios/buscarUsuarios',
             dataSrc: ''
@@ -73,6 +74,7 @@ function EliminarUsuario(row) {
         contentType: "application/json",
         dataType: "html",
         success: function (resultado) {
+            tablaUsuarios.ajax.reload();
         }
     })
 }
