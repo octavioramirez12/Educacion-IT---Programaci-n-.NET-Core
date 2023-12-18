@@ -21,7 +21,14 @@
                     return row.activo ? "Si" : "No"
                 }, title: 'Activo'
             },
-            { data: 'codigo', title: 'Código' },
+            {
+                data: function (row) {
+                    var botones =
+                        `<td><a href='javascript:EditarUsuario(${JSON.stringify(row)})'><i class="fa-solid fa-pen-to-square"></i></a></td>` + 
+                        `<td><a href='javascript:EliminarUsuario(${JSON.stringify(row)})'><i class="fa-solid fa-trash"></i></a></td>`
+                    return botones;
+                }
+            }
         ],
         language:
         {
@@ -43,3 +50,5 @@ function GuardarUsuario() {
     })
 }
 
+
+//<i class="fa-solid fa-trash"></i>
