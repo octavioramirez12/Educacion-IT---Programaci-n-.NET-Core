@@ -4,16 +4,16 @@ using Data.Manager;
 
 namespace Api.Services
 {
-    public class UsuariosService : IUsuariosService
+    public class RolesService : IRolesService
     {
-        private readonly UsuariosManager _manager;
+        private readonly RolesManager _manager;
 
-        public UsuariosService()
+        public RolesService()
         {
-            _manager = new UsuariosManager();
+            _manager = new RolesManager();
         }
 
-        public async Task<List<Usuarios>> BuscarUsuariosAsync()
+        public async Task<List<Roles>> BuscarRolesAsync()
         {
             try
             {
@@ -26,13 +26,13 @@ namespace Api.Services
             }
         }
 
-        public async Task<List<Usuarios>> GuardarUsuarioAsync(Usuarios model)
+        public async Task<List<Roles>> GuardarRolAsync(Roles model)
         {
             var result = await _manager.Guardar(model, model.Id);
             return await _manager.BuscarListaAsync();
         }
 
-        public async Task<List<Usuarios>> EliminarUsuarioAsync(Usuarios model)
+        public async Task<List<Roles>> EliminarRolAsync(Roles model)
         {
             model.Activo = false;
             var result = await _manager.Eliminar(model);

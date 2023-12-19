@@ -39,7 +39,7 @@ namespace Data.Base
                     contextSingleton.Entry(entity).State = EntityState.Modified;
 
                 var resultado = await contextSingleton.SaveChangesAsync() > 0;
-
+                contextSingleton.Entry(entity).State = EntityState.Detached;
                 return resultado;
             }
             catch (Exception ex)

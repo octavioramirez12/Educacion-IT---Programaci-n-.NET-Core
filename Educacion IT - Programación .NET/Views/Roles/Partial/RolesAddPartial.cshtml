@@ -1,0 +1,31 @@
+﻿@model RolesViewModel
+
+<div class="modal fade" id="rolesModal" tabindex="1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Alta y/o modificación de roles</h5>
+            </div>
+            <div class="modal-body">
+                @using (Html.BeginForm("GuardarRol", "Roles", FormMethod.Post))
+                {
+                    @Html.HiddenFor(rol => rol.Id)
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Nombre</label>
+                            @Html.EditorFor(rol => rol.Nombre, new {htmlAttributes = new {@class = "col-md-9 form-control ", @required="required"}})
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Activo</label>
+                            @Html.CheckBoxFor(rol => rol.Activo, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                    </div>
+                    <div classs="modal-footer">
+                        <button type="button" class="btn btn-secondary float-end" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-success float-end me-3" id="btnGuardar">Guardar</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

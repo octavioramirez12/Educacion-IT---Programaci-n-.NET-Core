@@ -9,15 +9,50 @@
             <div class="modal-body">
                 @using (Html.BeginForm("GuardarUsuario", "Usuarios", FormMethod.Post))
                 {
+                    @Html.HiddenFor(usuario => usuario.Id)
                     <div class="row">
                         <div class="col-md-6 mt-1 mb-3">
                             <label class="col-md-6 form-control-label">Nombre</label>
-                            @Html.EditorFor(usuario => usuario.Nombre, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                            @Html.EditorFor(usuario => usuario.Nombre, new {htmlAttributes = new {@class = "col-md-9 form-control ", @required="required"}})
                         </div>
                         <div class="col-md-6 mt-1 mb-3">
                             <label class="col-md-6 form-control-label">Apellido</label>
                             @Html.EditorFor(usuario => usuario.Apellido, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Fecha de nacimiento</label>
+                            @Html.EditorFor(usuario => usuario.Fecha_Nacimiento, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Contraseña</label>
+                            @Html.EditorFor(usuario => usuario.Clave, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Mail</label>
+                            @Html.EditorFor(usuario => usuario.Mail, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Rol</label>
+                            <select name="Id_Rol" required class="col-md-9  form-control">
+                                <option value="">Seleccionar...</option>
+                                <option value="2">Administrador</option>
+                                <option value="1">Usuario</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mt-1 mb-3">
+                            <label class="col-md-6 form-control-label">Activo</label>
+                            @Html.CheckBoxFor(usuario => usuario.Activo, new {htmlAttributes = new {@class = "col-md-9 form-control", @required="required"}})
+                        </div>
+                    </div>
+                    <div classs="modal-footer">
+                        <button type="button" class="btn btn-secondary float-end" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-success float-end me-3" id="btnGuardar">Guardar</button>
                     </div>
                 }
             </div>
