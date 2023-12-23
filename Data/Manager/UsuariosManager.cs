@@ -23,7 +23,7 @@ namespace Data.Manager
 
         public async override Task<List<Usuarios>> BuscarListaAsync()
         {
-            return await contextSingleton.Usuarios.Where(usuario => usuario.Activo).ToListAsync();
+            return await contextSingleton.Usuarios.Where(usuario => usuario.Activo).Include(usuario => usuario.Roles).ToListAsync();
         }
     }
 }
