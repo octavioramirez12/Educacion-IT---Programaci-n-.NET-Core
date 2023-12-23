@@ -8,11 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Productos\Partial\" />
+    <None Remove="ViewModels\ProductosViewModel.cs~RF323d6d44.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="wwwroot\css\Inicio\" />
-    <Folder Include="wwwroot\css\Productos\" />
     <Folder Include="wwwroot\js\Utils\" />
-    <Folder Include="wwwroot\js\Productos\" />
     <Folder Include="wwwroot\js\Inicio\" />
   </ItemGroup>
 

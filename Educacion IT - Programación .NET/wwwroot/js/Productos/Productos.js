@@ -1,13 +1,16 @@
-﻿var tablaRoles;
+﻿var tablaProductos;
 $(document).ready(function () {
-    tablaRoles = $('#roles').DataTable({
+    tablaProductos = $('#productos').DataTable({
         ajax: {
-            url: 'https://localhost:7126/api/roles/buscarRoles',
+            url: 'https://localhost:7126/api/productos/buscarProductos',
             dataSrc: ''
         },
         columns: [
+            { data: 'imagen', title: 'Imagen' },
             { data: 'id', title: 'Id' },
-            { data: 'nombre', title: 'Nombre' },
+            { data: 'descripcion', title: 'Descripción' },
+            { data: 'stock', title: 'Stock' },
+            { data: 'precio', title: 'Precio' },
             {
                 data: function (row) {
                     return row.activo ? "Si" : "No"
@@ -16,8 +19,8 @@ $(document).ready(function () {
             {
                 data: function (row) {
                     var botones =
-                        `<td><a href='javascript:EditarRol(${JSON.stringify(row)})'><i class="fa-solid fa-pen-to-square editarRol"></i></a></td>` + 
-                        `<td><a href='javascript:EliminarRol(${JSON.stringify(row)})'><i class="fa-solid fa-trash eliminarRol"></i></a></td>`
+                        `<td><a href='javascript:EditarProducto(${JSON.stringify(row)})'><i class="fa-solid fa-pen-to-square editarProducto"></i></a></td>` + 
+                        `<td><a href='javascript:EliminarProducto(${JSON.stringify(row)})'><i class="fa-solid fa-trash eliminarProducto"></i></a></td>`
                     return botones;
                 }
             }
@@ -29,35 +32,35 @@ $(document).ready(function () {
     });
 });
 
-function GuardarRol() {
+function GuardarProducto() {
     $.ajax({
         type: "POST",
-        url: "/Roles/RolesAddPartial",
+        url: "/Productos/ProductosAddPartial",
         data: "",
         contentType: "application/json",
         dataType: "html",
         success: function (resultado) {
-            $('#rolesAddPartial').html(resultado);
-            $('#rolesModal').modal('show');
+            $('#productosAddPartial').html(resultado);
+            $('#productosModal').modal('show');
         }
     })
 }
 
-function EditarRol(row) {
+function EditarProducto(row) {
     $.ajax({
         type: "POST",
-        url: "/Roles/RolesAddPartial",
+        url: "/Productos/ProductosAddPartial",
         data: JSON.stringify(row),
         contentType: "application/json",
         dataType: "html",
         success: function (resultado) {
-            $('#rolesAddPartial').html(resultado);
-            $('#rolesModal').modal('show');
+            $('#productosAddPartial').html(resultado);
+            $('#productosModal').modal('show');
         }
     })
 }
 
-function EliminarRol(row) {
+function EliminarProducto(row) {
     const swalWithBootstrapButtons = Swal.mixin({
         customClass: {
             confirmButton: "btn btn-success",
@@ -67,7 +70,7 @@ function EliminarRol(row) {
     });
     swalWithBootstrapButtons.fire({
         title: "Estas seguro?",
-        text: "Vas a eliminar el rol!",
+        text: "Vas a eliminar el producto!",
         icon: "warning",
         showCancelButton: true,
         confirmButtonText: "Si, eliminar!",
@@ -78,15 +81,15 @@ function EliminarRol(row) {
 
             $.ajax({
                 type: "POST",
-                url: "/Roles/EliminarRol",
+                url: "/Productos/EliminarProducto",
                 data: JSON.stringify(row),
                 contentType: "application/json",
                 dataType: "html",
                 success: function () {
-                    tablaRoles.ajax.reload();
+                    tablaProductos.ajax.reload();
                     swalWithBootstrapButtons.fire({
                         title: "Eliminado!",
-                        text: "El rol ha sido eliminado.",
+                        text: "El producto ha sido eliminado.",
                         icon: "success"
                     });
                 }
@@ -96,7 +99,7 @@ function EliminarRol(row) {
         ) {
             swalWithBootstrapButtons.fire({
                 title: "Cancelado",
-                text: "No se ha eliminado ningún rol",
+                text: "No se ha eliminado ningún producto",
                 icon: "error"
             });
         }
