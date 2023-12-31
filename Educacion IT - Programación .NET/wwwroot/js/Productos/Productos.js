@@ -6,8 +6,17 @@ $(document).ready(function () {
             dataSrc: ''
         },
         columns: [
-            { data: 'imagen', title: 'Imagen' },
             { data: 'id', title: 'Id' },
+            {
+                data: 'imagen', render: function (data) {
+                    if (data != "") {
+                        return `<img src="data:image/jpef;base64,${data}" width="100px" height="100px" style="border-radius:15px"></img>`
+                    }
+                    else {
+                        return `<img src="../images/nofoto.jpg" width="100px" height="100px" style="border-radius:15px"></img>`
+
+                    }
+            }, title: 'Imagen' },
             { data: 'descripcion', title: 'Descripción' },
             { data: 'stock', title: 'Stock' },
             { data: 'precio', title: 'Precio' },

@@ -13,13 +13,13 @@ namespace Educacion_IT___Programación_.NET.Controllers
         private readonly IHttpClientFactory _httpClient;
         public ProductosController(IHttpClientFactory httpClient)
         {
-            _httpClient= httpClient;
+            _httpClient = httpClient;
         }
         public IActionResult Productos()
         {
             return View();
         }
-        public async Task<IActionResult> ProductosAddPartial([FromBody]Productos producto)
+        public async Task<IActionResult> ProductosAddPartial([FromBody] Productos producto)
         {
             var productoViewModel = new ProductosViewModel();
 
@@ -34,11 +34,21 @@ namespace Educacion_IT___Programación_.NET.Controllers
         public async Task<IActionResult> GuardarProducto(Productos producto)
         {
             var baseApi = new BaseApi(_httpClient);
+            if (producto.Imagen_Archivo != null && producto.Imagen_Archivo.Length > 0)
+            {
+                using (var ms = new MemoryStream())
+                {
+                    producto.Imagen_Archivo.CopyTo(ms);
+                    var imagenBytes = ms.ToArray();
+                    producto.Imagen = Convert.ToBase64String(imagenBytes);
+                }
+            }
+            producto.Imagen_Archivo = null;
             var productos = await baseApi.PostToApi("Productos/GuardarProducto", producto);
 
             return RedirectToAction("Productos", "Productos");
         }
-        public async Task<IActionResult> EliminarProducto([FromBody]Productos producto)
+        public async Task<IActionResult> EliminarProducto([FromBody] Productos producto)
         {
             var baseApi = new BaseApi(_httpClient);
             var productos = await baseApi.PostToApi("Productos/EliminarProducto", producto);
