@@ -1,5 +1,6 @@
 ﻿using Data.Entities;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Educacion_IT___Programación_.NET.ViewModels
 {
@@ -11,6 +12,7 @@ namespace Educacion_IT___Programación_.NET.ViewModels
         public int Stock { get; set; }
         public string Imagen { get; set; }
         public bool Activo { get; set; }
+        [NotMapped]
         public IFormFile Imagen_Archivo { get; set; }
 
         public static implicit operator ProductosViewModel(Productos producto)
